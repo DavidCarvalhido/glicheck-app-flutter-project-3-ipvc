@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 
+import 'package:gli_check/configs/color_constants.dart';
 import 'package:gli_check/components/button_component.dart';
 import 'package:gli_check/components/text_field_component.dart';
 import 'package:gli_check/views/sign_up_page.dart';
@@ -24,7 +25,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login Page'),
-        backgroundColor: Colors.amber.shade50,
+        backgroundColor: ColorConstants.tintMidOrange,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -44,14 +45,20 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 50.0,
                 ),
-                const Text('Please, login here'),
+                Text(
+                  'Please, login here',
+                  style: TextStyle(
+                    color: ColorConstants.tintDarkGrey,
+                    fontSize: 24.0,
+                  ),
+                ),
                 const SizedBox(
-                  height: 50.0,
+                  height: 30.0,
                 ),
                 // -- Email TextField
                 TextFieldComponent(
                   controller: emailController,
-                  labelText: 'Email',
+                  hintText: 'Email',
                   obscureText: false,
                   // validator: (value) {
                   //   if(value == null || value.isEmpty()) {
@@ -66,7 +73,7 @@ class LoginPage extends StatelessWidget {
                 // -- Password TextField
                 TextFieldComponent(
                   controller: passwordController,
-                  labelText: 'Palavra-passe',
+                  hintText: 'Palavra-passe',
                   obscureText: true,
                   // validator: (value) {
                   //   if(value == null || value.isEmpty()) {
@@ -76,7 +83,7 @@ class LoginPage extends StatelessWidget {
                   // },
                 ),
                 const SizedBox(
-                  height: 10.0,
+                  height: 15.0,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -89,13 +96,15 @@ class LoginPage extends StatelessWidget {
                             TextSpan(
                               text: 'Don\'t have an account?\t',
                               style: TextStyle(
-                                color: Colors.grey.shade600,
+                                color: ColorConstants.tintDarkGrey,
+                                fontSize: 16.0,
                               ),
                             ),
                             TextSpan(
                               text: 'Register here',
-                              style: const TextStyle(
-                                color: Colors.green,
+                              style: TextStyle(
+                                color: ColorConstants.tintLightBlue,
+                                fontSize: 16.0,
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
@@ -114,7 +123,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 10.0,
+                  height: 30.0,
                 ),
                 ButtonComponent(
                   onTap: signInUser,

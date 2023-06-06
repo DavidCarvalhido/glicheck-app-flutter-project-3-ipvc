@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gli_check/configs/color_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:gli_check/views/onboarding_page.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Glicheck App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber.shade50),
-        scaffoldBackgroundColor: Colors.amber.shade50,
+        scaffoldBackgroundColor: ColorConstants.tintMidOrange,
         useMaterial3: true,
       ),
       home: isViewed == 0

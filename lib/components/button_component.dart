@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gli_check/configs/color_constants.dart';
 
 class ButtonComponent extends StatelessWidget {
   final Function()? onTap;
@@ -15,16 +16,16 @@ class ButtonComponent extends StatelessWidget {
           horizontal: 25.0,
         ),
         decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(8.0),
+          color: ColorConstants.tintBlack,
+          borderRadius: BorderRadius.circular(15.0),
         ),
-        child: const Center(
+        child: Center(
           child: Text(
             'Sign In',
             style: TextStyle(
-              color: Colors.white,
+              color: ColorConstants.tintLightGrey,
               fontWeight: FontWeight.bold,
-              fontSize: 16,
+              fontSize: 20.0,
             ),
           ),
         ),

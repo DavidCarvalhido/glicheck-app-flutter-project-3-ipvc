@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:gli_check/configs/color_constants.dart';
 import 'package:gli_check/components/button_component.dart';
 import 'package:gli_check/components/text_field_component.dart';
+import 'package:gli_check/components/dropdown_component.dart';
 
 class SignUpPage extends StatelessWidget {
   SignUpPage({Key? key}) : super(key: key);
@@ -32,7 +34,7 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sign Up Page'),
-        backgroundColor: Colors.amber.shade50,
+        backgroundColor: ColorConstants.tintMidOrange,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -52,14 +54,20 @@ class SignUpPage extends StatelessWidget {
                 const SizedBox(
                   height: 50.0,
                 ),
-                const Text('Please, create your profile here'),
+                Text(
+                  'Create your profile here',
+                  style: TextStyle(
+                    color: ColorConstants.tintDarkGrey,
+                    fontSize: 24.0,
+                  ),
+                ),
                 const SizedBox(
-                  height: 50.0,
+                  height: 25.0,
                 ),
                 // -- Email TextField
                 TextFieldComponent(
                   controller: emailController,
-                  labelText: 'Email',
+                  hintText: 'Email',
                   obscureText: false,
                   // validator: (value) {
                   //   if (value == null || value.isEmpty()) {
@@ -77,7 +85,7 @@ class SignUpPage extends StatelessWidget {
                 // -- Username TextField
                 TextFieldComponent(
                   controller: usernameController,
-                  labelText: 'Username',
+                  hintText: 'Username',
                   obscureText: false,
                 ),
                 const SizedBox(
@@ -86,7 +94,7 @@ class SignUpPage extends StatelessWidget {
                 // -- Password TextField
                 TextFieldComponent(
                   controller: passwordController,
-                  labelText: 'Password',
+                  hintText: 'Password',
                   obscureText: true,
                 ),
                 const SizedBox(
@@ -95,7 +103,7 @@ class SignUpPage extends StatelessWidget {
                 // -- RePassword TextField
                 TextFieldComponent(
                   controller: rePasswordController,
-                  labelText: 'Rewrite your password',
+                  hintText: 'Rewrite your password',
                   obscureText: true,
                 ),
                 const SizedBox(
@@ -107,7 +115,7 @@ class SignUpPage extends StatelessWidget {
                       // -- FirstName TextField
                       child: TextFieldComponent(
                         controller: firstNameController,
-                        labelText: 'First name',
+                        hintText: 'First name',
                         obscureText: false,
                       ),
                     ),
@@ -115,7 +123,7 @@ class SignUpPage extends StatelessWidget {
                       // -- LastName TextField
                       child: TextFieldComponent(
                         controller: lastNameController,
-                        labelText: 'Last name',
+                        hintText: 'Last name',
                         obscureText: false,
                       ),
                     ),
@@ -130,7 +138,7 @@ class SignUpPage extends StatelessWidget {
                       // -- User Weight TextField
                       child: TextFieldComponent(
                         controller: userWeightController,
-                        labelText: 'Weight',
+                        hintText: 'Weight',
                         obscureText: false,
                       ),
                     ),
@@ -138,7 +146,7 @@ class SignUpPage extends StatelessWidget {
                       // -- User Height TextField
                       child: TextFieldComponent(
                         controller: userHeightController,
-                        labelText: 'Height',
+                        hintText: 'Height',
                         obscureText: false,
                       ),
                     ),
@@ -150,26 +158,17 @@ class SignUpPage extends StatelessWidget {
                 // -- Age TextField
                 TextFieldComponent(
                   controller: ageController,
-                  labelText: 'Age',
+                  hintText: 'Age',
                   obscureText: false,
                 ),
                 const SizedBox(
                   height: 20.0,
                 ),
-                // -- Country DropdownMenu --> change to a dropdown menu
-                TextFieldComponent(
-                  controller: countryController,
-                  labelText: 'Country',
-                  obscureText: false,
-                ),
-                const SizedBox(
-                  height: 20.0,
-                ),
-                // -- PhoneNumber TextField
-                TextFieldComponent(
-                  controller: phoneNumberController,
-                  labelText: 'Phone number',
-                  obscureText: false,
+                // -- Country DropdownMenu & PhoneNumber TextField
+                const DropdownComponent(
+                  // controller: phoneNumberController,
+                  // labelText: 'Phone number',
+                  // obscureText: false,
                 ),
                 const SizedBox(
                   height: 35.0,
